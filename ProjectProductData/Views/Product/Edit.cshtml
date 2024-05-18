@@ -1,0 +1,97 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ProjectProductData.Models.ProductList
+
+@if (TempData["EMsg"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["EMsg"]
+    </div>
+}
+
+<h1> Edit Customer </h1>
+
+@if (Model is null)
+{
+    <p>No Product found this ID</p>
+}
+else
+{
+
+    <div class="container">
+        <div class="box">
+
+
+            <form method="post">
+
+
+                <div class="mt-3">
+                    <label class="form-label">Product ID</label>
+                    <input type="text" class="form-control" asp-for="ProductID" readonly />
+                    <span asp-validation-for="ProductID" class="text-danger"></span>
+                </div>
+
+                <div class="mt-3">
+                    <label class="form-label">Product Name</label>
+                    <input type="text" class="form-control" asp-for="ProductName" />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+
+                <div class="mt-3">
+                    <label class="form-label">Product Size</label>
+                    <input type="text" class="form-control" asp-for="ProductSize" />
+                    <span asp-validation-for="ProductSize" class="text-danger"></span>
+
+                </div>
+
+                <div class="mt-3">
+                    <label class="form-label">Product Price</label>
+                    <input type="text" class="form-control" asp-for="ProductPrize" />
+                    <span asp-validation-for="ProductPrize" class="text-danger"></span>
+
+                </div>
+
+
+
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <span asp-validation-summary="All" class="text-danger"></span>
+
+                   
+
+
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+   
+
+  
+
+}
+
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh; /* Full viewport height */
+    }
+
+    .box {
+        border: 2px solid #ccc;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 400px;
+    }
+</style>
