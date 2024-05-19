@@ -30,14 +30,12 @@ namespace ProjectProductData.Controllers
                     int remaining = 4 - shortName.Length;
                     shortName += new string('X', remaining);
                 }
-                // Finding the Count From DB
+                shortName= shortName.ToUpper();
 
-                //var counter = await _context.productlists.FromSqlRaw("EXECUTE GetProductID").ToListAsync();
-                //var counter = await _context.Database.ExecuteSqlRawAsync("GetProductID");
 
                 var counter = await _context.GetStoredProcedureResultsAsync();
 
-                string uniqueCode = $"{shortName}-{counter[0].ProductID.ToString()}";
+                string uniqueCode = $"{shortName}-{counter[0].ProductID}";
 
                 AdPr.ProductID = uniqueCode;
 

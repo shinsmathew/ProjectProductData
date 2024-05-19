@@ -13,13 +13,13 @@ namespace ProjectProductData.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<GPID>().HasNoKey();
+            modelBuilder.Entity<GetUnqPID>().HasNoKey();
             
         }
         public DbSet<ProductList> productlists { get; set; }
-        public DbSet<GPID> gpids { get; set; }
+        public DbSet<GetUnqPID> gpids { get; set; }
 
-        public async Task<List<GPID>> GetStoredProcedureResultsAsync()
+        public async Task<List<GetUnqPID>> GetStoredProcedureResultsAsync()
         {
             return await gpids.FromSqlRaw("EXECUTE GetProductID").ToListAsync();
         }

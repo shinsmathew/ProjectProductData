@@ -16,7 +16,7 @@ namespace ProjectProductData.Models
         public decimal ProductPrize { get; set; }
     }
 
-   public class GPID
+   public class GetUnqPID
     {
         
         public string ProductID { get; set; }
