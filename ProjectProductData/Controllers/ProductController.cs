@@ -33,11 +33,11 @@ namespace ProjectProductData.Controllers
                 // Finding the Count From DB
 
                 //var counter = await _context.productlists.FromSqlRaw("EXECUTE GetProductID").ToListAsync();
-                var counter = await _context.Database.ExecuteSqlRawAsync("GetProductID");
+                //var counter = await _context.Database.ExecuteSqlRawAsync("GetProductID");
 
+                var counter = await _context.GetStoredProcedureResultsAsync();
 
-
-                string uniqueCode = $"{shortName}{counter:D3}";
+                string uniqueCode = $"{shortName}-{counter[0].ProductID.ToString()}";
 
                 AdPr.ProductID = uniqueCode;
 
