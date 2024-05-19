@@ -12,6 +12,9 @@ namespace ProjectProductData.Models
         public decimal ProductSize { get; set; }
         [Required]
         public decimal ProductPrize { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
 
     }
+
+    
 }
