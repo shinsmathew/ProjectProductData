@@ -69,7 +69,7 @@ namespace ProjectProductData.Controllers
         }
 
 
-
+        [HttpGet]
         public async Task<IActionResult> ProductList()
         {
             List<ProductList> results = new List<ProductList>();
